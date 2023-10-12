@@ -13,3 +13,10 @@ export const Title = styled.h1`
    align-items: center;
    font-size: 32px;
 `
+
+export const ErrMsg = styled.div`
+  margin: ${({theme}) => theme.spacing(8)} auto;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+`

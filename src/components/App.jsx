@@ -1,5 +1,5 @@
 import { GlobalStyle } from "./GlobalStyle";
-import { Layout, Title } from "./Layout";
+import { ErrMsg, Layout, Title } from "./Layout";
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
@@ -9,6 +9,7 @@ import { fetchContacts } from "redux/operations";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectError, selectIsLoading } from "redux/selectors";
+import { Loader } from "./Loader/Loader";
 
 
 export const App = () => {
@@ -26,7 +27,9 @@ export const App = () => {
         <ContactForm />
         <h2>Contacts</h2>
         <Filter />
+         {isLoading && <Loader />}
         <ContactList />
+         {error && <ErrMsg>Sorry, something went wrong. Try reload page</ErrMsg>}
         <GlobalStyle />
         <Toaster />
       </Layout>
