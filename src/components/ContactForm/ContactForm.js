@@ -4,7 +4,9 @@ import "yup-phone-lite";
 import { Label, StyledForm, StyledField, ErrorMsg } from "./ContactForm.styled"
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
-import { addContact, getContacts } from 'redux/contactsSlice';
+import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/operations';
+// import { addContact, getContacts } from 'redux/contactsSlice';
 
 const phonePattern = "\\+?\\d{1,4}?[ .\\-\\s]?\\(?\\d{1,3}?\\)?[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,9}";
 
@@ -34,6 +36,7 @@ export const ContactForm =()=>{
   }
 
   const onAdd = contact => {
+    console.log('submit cont= ', contact);
     if (isInList(contact)) {
       toast(`${contact.name} is already in contacts`, toastOptions );
     } else{
