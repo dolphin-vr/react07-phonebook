@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BtnDelete, List, ListItem, Name, Phone, Wrapper } from "./ContactList.styled"
 import {MdOutlineDeleteForever} from "react-icons/md";
 // import { deleteContact, getContacts } from "redux/contactsSlice";
-import { getFilter } from "redux/filterSlice";
+// import { getFilter } from "redux/filterSlice";
 import { getContacts } from "redux/selectors";
 import { deleteContact } from "redux/operations";
 
