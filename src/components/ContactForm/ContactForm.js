@@ -38,7 +38,6 @@ export const ContactForm = () => {
   };
 
   const onAdd = contact => {
-    console.log('submit cont= ', contact);
     if (isInList(contact)) {
       toast(`${contact.name} is already in contacts`, toastOptions);
     } else {
