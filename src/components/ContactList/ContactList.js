@@ -8,11 +8,11 @@ import {
   Wrapper,
 } from './ContactList.styled';
 import { MdOutlineDeleteForever } from 'react-icons/md';
-import { filteredContacts } from 'redux/selectors';
+import { selectFilteredContacts } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
 
 export const ContactList = () => {
-  const contacts = useSelector(filteredContacts);
+  const contacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
   return (
     <Wrapper>
